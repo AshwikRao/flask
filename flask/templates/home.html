@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+
+<body>
+<center><h1><font color="black">Heart Disease Prediction</h1></center>
+<h2>     </h2>
+
+<div align="center" style="margin-right: 30%;
+    margin-left: 30%;">
+
+  <form method="POST">
+  <form action="/action_page.php">
+
+    <label for="Age"></label>
+    <input type="number" id="Age" name="Age" placeholder="age in years (between 18 and 100)" min="18" max="100" required>
+
+    <label for="sex"></label>
+    <input type="number" id="sex" name="sex" placeholder="Sex (1 = male; 0 = female)" min="0" max="1" required>
+
+    <label for="cp"></label>
+    <input type="number" id="cp" name="cp" placeholder="chest pain type (between 0 or 3)" min="0" max="3" required>
+{#      <input type="number" id="cp" name="cp" placeholder="cp (between 2 or 103)" min="0" max="3" step="0.1" required size="35">#}
+    <label for="trestbps"></label>
+    <input type="number" id="trestbps" name="trestbps" placeholder="resting blood pressure in mm Hg (between 94 and 200)" min="94" max="200"  required>
+
+    <label for="chol"></label>
+    <input type="number" id="chol" name="chol" placeholder="serum cholestoral in mg/dl (between 126 and 564)" min="126" max="564" required>
+
+    <label for="fbs"></label>
+    <input type="number" id="fbs" name="fbs" placeholder="fasting blood sugar 120 mg/dl (1 = true; 0 = false)" min="0" max="1" required>
+
+    <label for="restecg"></label>
+    <input type="number" id="restecg" name="restecg" placeholder="resting electrocardiographic results (0 or 2)" min="0" max="2" required>
+
+    <label for="thalach"></label>
+    <input type="number" id="thalach" name="thalach" placeholder="maximum heart rate achieved (between 71 or 202)" min="71" max="202" required>
+
+    <label for="exang"></label>
+    <input type="number" id="exang" name="exang" placeholder="exercise induced angina (1 = yes; 0 = no)" min="0" max="1"  required>
+
+    <label for="oldpeak"></label>
+    <input type="number" id="oldpeak" name="oldpeak" placeholder="ST depression induced by exercise relative to rest (between 0 and 6.2)" min="0" max="6.2" step="0.1" required>
+
+    <label for="slope"></label>
+    <input type="number" id="slope" name="slope" placeholder="the slope of the peak exercise ST segment (0 or 2)" min="0" max="2" required>
+
+    <label for="ca"></label>
+    <input type="number" id="ca" name="ca" placeholder="number of major vessels colored by flourosopy (between 0 or 4)" min="0" max="4" required>
+
+    <label for="thal"></label>
+    <input type="number" id="thal" name="thal" placeholder="thal (between 0 and 3)" min="0" max="3"  required>
+
+    <select name="req_model">
+    <option value="Logistic">Logistic Regression</option>
+    <option value="RandomForest">Random Forest</option>
+    <option value="SVM">SVM</option>
+  </select>
+
+
+    <input type="submit" value="Predict">
+  </form>
+</form>
+
+<form method="GET">
+    <center><h2><font color="Black"> Heart Disease Chance is {{ target}}%</h2></center>
+    <center><h2><font color="Black"> {{ sale_making}}</h2></center>
+</form>
+
+
+</div>
+
+
+</body>
+</html>
